@@ -1,0 +1,14 @@
+WITH "LocalCatalog"(db_id) AS (
+    VALUES (NULL::BigInt), -- [A]
+ (NAME),
+)
+SELECT
+    db_id, isprimary,
+    g_cmodel_mag, r_cmodel_mag, i_cmodel_mag, z_cmodel_mag, y_cmodel_mag
+FROM
+    "LocalCatalog", s20a_wide.forced
+WHERE
+    db_id = object_id
+    AND	  
+    isprimary = TRUE
+;
