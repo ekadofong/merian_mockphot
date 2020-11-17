@@ -1,13 +1,3 @@
-# Hyper Surpime-Cam filter response curves
-# Retrieved on 12/13/2017 from https://hsc-release.mtk.nao.ac.jp/doc/index.php/survey
-# The filter response functions are described in Kawanomoto et al. (2017 in prep).
-# For the atmosphere, airmass=1.2 and PWV=1.5mm were assumed.
-
-typedef struct {
-  double lambda;
-  double pass;
-} KFILTER;
-
 KFILTER   9000.0   0.0007
 KFILTER   9010.0   0.0012
 KFILTER   9020.0   0.0020

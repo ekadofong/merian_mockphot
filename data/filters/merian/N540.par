@@ -1,8 +1,3 @@
-typedef struct {
-  double lambda;
-  double pass;
-} KFILTER;
-           
   KFILTER   5999.0   1.3E-5                 
   KFILTER   5998.0   1.33E-5                
   KFILTER   5997.0   1.3500000000000001E-5  
