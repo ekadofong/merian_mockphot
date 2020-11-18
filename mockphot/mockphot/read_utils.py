@@ -38,7 +38,7 @@ class FilterResponse ( object ):
         gAB_lambda = gAB_lambda.to(u.erg/u.s/u.cm**2/u.AA).value
 
         dlambda = np.diff(self.wavelength)
-        dlambda = np.concatenate([[dlambda[0]], dlambda])
+        dlambda = abs(np.concatenate([[dlambda[0]], dlambda]))
 
         numerator = np.sum ( self.wavelength * flux_cast * self.transmission * dlambda )
         denom = np.sum ( self.wavelength * gAB_lambda * self.transmission * dlambda )
@@ -49,7 +49,6 @@ class FilterResponse ( object ):
             num_err = np.sqrt(np.sum ((self.wavelength * fluxerr_cast * self.transmission * dlambda)**2))
 
             mag_err = 2.5/(np.log(10)*numerator) * num_err
-
             return -2.5*np.log10(numerator/denom), mag_err
             
         return -2.5*np.log10(numerator/denom)
